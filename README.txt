@@ -1,28 +1,21 @@
-120_CORE_DECISION_ENGINE_V1
+120_CORE_DAILY_ENGINE_V2_CLOUD_SAFE
 
-Includes:
-- Streamlit app: app.py
-- Local CLI: cli.py
-- Streamlit Cloud requirements.txt
+This is the daily-generator version.
 
-Run locally:
-Double-click RUN_STREAMLIT_LOCAL.bat
-
-Cloud:
-Upload this folder to GitHub and deploy app.py on Streamlit Community Cloud.
-Do not put the 7GB master file in Streamlit Community Cloud.
-
-Inputs for Rule DB:
-01_TOP_OVERALL_SIGNALS.csv
-02_TOP_PER_CORE_SIGNALS.csv
-03_TOP_PER_STREAM_SIGNALS.csv
-04_TOP_PER_MEMBER_SIGNALS.csv
-05_TOP_PAIR_COMBO_SIGNALS.csv
-
-Inputs for scoring:
-A candidate/daily matrix CSV.
+Inputs:
+- merged history CSV
+- 120 core rule library CSV(s), such as core_rule_library_stable_only_filtered.csv
 
 Outputs:
-OUTPUTS/120_CORE_RULE_DB_FROM_035.csv
-OUTPUTS/120_CORE_SCORED_CANDIDATES.csv
-OUTPUTS/120_CORE_DAILY_PLAYLIST.csv
+- 120_CORE_DAILY_CANDIDATE_MATRIX.csv
+- 120_CORE_DAILY_PLAYLIST.csv
+- 120_CORE_MANUAL_TEST_MATRIX.csv
+- 120_CORE_MANUAL_TEST_SUMMARY.csv
+
+It calculates:
+- Core→Stream score/rank/row percentile
+- Stream→Core rank/row percentile
+- movement values
+- movement agreement
+- cadence proxy
+- final arbitration score
